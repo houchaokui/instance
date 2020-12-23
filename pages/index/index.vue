@@ -21,6 +21,69 @@
 		},
 		methods: {
 
+
+
+             getdata:function(){
+							var obj=this;
+							
+							this.$http.get("http://192.168.0.115:6688/").then(function(data){
+								obj.items=data.body.books;
+								//console.log(data.body.books);
+							});
+              					},
+								
+								
+			
+			// 方式一
+			sendRequest: function() {
+				this.loading = true
+				this.$api.test({noncestr: Date.now()}).then((res)=>{
+					this.loading = false;
+					console.log('request success', res)
+					uni.showToast({
+						title: '请求成功',
+						icon: 'success',
+						mask: true
+					});
+					this.res = '请求结果 : ' + JSON.stringify(res);
+				}).catch((err)=>{
+					this.loading = false;
+					console.log('request fail', err);
+				})
+			},
+			
+			
+			//接口二:奖品列表
+			
+			sendRequest: function() {
+				this.loading = true
+				this.$api.tests({noncestr: Date.now()}).then((res)=>{
+					this.loading = false;
+					console.log('request success', res)
+					uni.showToast({
+						title: '请求成功',
+						icon: 'success',
+						mask: true
+					});
+					this.res = '请求结果 : ' + JSON.stringify(res);
+				}).catch((err)=>{
+					this.loading = false;
+					console.log('request fail', err);
+				})
+			},
+			
+			
+			
+			//方式二
+			async sendRequest1() {
+				this.loading = true
+				let res = await this.$api.test({noncestr: Date.now()});
+				this.loading = false;
+				this.res = '请求结果 : ' + JSON.stringify(res);
+			}
+			
+			
+
 		}
 	}
 </script>

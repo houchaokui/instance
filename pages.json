@@ -2,8 +2,11 @@
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "components/HelloWorld",
+			//"path": "components/twindowmodal",
+			//"path": "components/twindowmodal2",
+			//"path": "components/record",
 			"style": {
-				"navigationBarTitleText": "幸运转盘"
+				"navigationBarTitleText": ""
 			}
 		}
 	],
@@ -11,6 +14,9 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"app-plus":{
+				"titleNView":false
+			}
 	}
 }
